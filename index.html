@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Valentine</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // [CHANGE THIS]: Put your Public Key here (from your previous steps)
+            emailjs.init("cD7XBvYQ9jCWSfsxp"); 
+        })();
+    </script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <audio id="bg-music" loop>
+        <source src="assets/bg.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="hearts-container">
+        <div class="heart">❤️</div>
+        <div class="heart">💖</div>
+        <div class="heart">💕</div>
+        <div class="heart">❤️</div>
+        
+    </div>
+
+    <div id="slide-1" class="container">
+        <h1>Hey Bubbs...</h1>
+        <img src="assets/1.jpg" 
+             class="intro-gif" alt="Hi">
+        <p>I told you may surprise ako sayo, and I'd like to keep my promises.</p>
+        <button onclick="nextState('slide-2')">Next</button>
+    </div>
+
+    <div id="slide-2" class="container" style="display:none;">
+        <h1>1st YAAAY!!!</h1>
+        <img src="assets/2.jpg" 
+             class="intro-gif" alt="Smile">
+        <p>It's our first ever Valentine's celebration and hopefully the first of many!!!</p>
+        <button onclick="nextState('slide-3')">Next</button>
+    </div>
+
+    <div id="slide-3" class="container" style="display:none;">
+        <h1>So...</h1>
+        <img src="assets/3.jpg" 
+             class="intro-gif" alt="Nervous">
+        <p>I wanted this day to be super duper special...</p>
+        <button onclick="nextState('slide-4')">Next</button>
+    </div>
+    <div id="slide-4" class="container" style="display:none;">
+        <h1>Babe...</h1>
+        <img src="assets/WATER.gif" 
+             class="intro-gif" alt="Nervous">
+        <p>I have a really important question to ask you.</p>
+        <button onclick="nextState('state-question')">Ready?</button>
+    </div>
+
+    <div id="state-question" class="container" style="display:none;">
+        <h1>Will you be my Valentine?</h1>
+        <p>(Wag mo na subukan mag NO, wala ka na takas sakin babe)</p>
+        <div class="buttons">
+            <button id="btn-yes" onclick="nextState('state-email')">Yes</button>
+            <button id="btn-no">No</button>
+        </div>
+    </div>
+
+    <div id="state-email" class="container" style="display:none;">
+        <h1>TAMA KA NG DESISYON BABY KO! ❤️</h1>
+        <p>Enter your email so I can send you the details:</p>
+        <input type="email" id="user-email" placeholder="her@email.com">
+        <button onclick="sendDateDetails()">Send Details</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
